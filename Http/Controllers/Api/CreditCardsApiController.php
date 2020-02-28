@@ -23,8 +23,8 @@ class CreditCardsApiController extends BaseApiController
   {
     try {
       $data = $request->input('attributes');
-      $plan = $this->payUCreditCards->creation($data);
-      $response = ["data" => $plan];
+      $creditCard = $this->payUCreditCards->creation($data);
+      $response = ["data" => $creditCard];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
@@ -37,8 +37,8 @@ class CreditCardsApiController extends BaseApiController
   {
     try {
       $data = $request->input('attributes');
-      $plan = $this->payUCreditCards->update($criteria, $data);
-      $response = ["data" => $plan];
+      $creditCard = $this->payUCreditCards->update($criteria, $data);
+      $response = ["data" => $creditCard];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
@@ -50,9 +50,9 @@ class CreditCardsApiController extends BaseApiController
   public function show ($criteria)
   {
     try{
-      $data = $this->payUCreditCards->query($criteria);
+      $creditCard = $this->payUCreditCards->query($criteria);
       $response = [
-        'data' => $data
+        'data' => $creditCard
       ];
       $status = 200;
     }catch (PayUException $e){
@@ -65,8 +65,8 @@ class CreditCardsApiController extends BaseApiController
   public function delete ($criteria)
   {
     try {
-      $plan = $this->payUCreditCards->delete($criteria);
-      $response = ["data" => $plan];
+      $creditCard = $this->payUCreditCards->delete($criteria);
+      $response = ["data" => $creditCard];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
