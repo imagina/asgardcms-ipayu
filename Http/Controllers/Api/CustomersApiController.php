@@ -20,9 +20,9 @@ class CustomersApiController extends BaseApiController
   public function create (Request $request)
   {
     try {
-      $data = $request->input('attributes');
+      $customer = $request->input('attributes');
       $plan = $this->payUCustomers->creation($data);
-      $response = ["data" => $plan];
+      $response = ["data" => $customer];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
@@ -35,8 +35,8 @@ class CustomersApiController extends BaseApiController
   {
     try {
       $data = $request->input('attributes');
-      $plan = $this->payUCustomers->update($criteria, $data);
-      $response = ["data" => $plan];
+      $customer = $this->payUCustomers->update($criteria, $data);
+      $response = ["data" => $customer];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
@@ -48,9 +48,9 @@ class CustomersApiController extends BaseApiController
   public function show ($criteria)
   {
     try{
-      $data = $this->payUCustomers->query($criteria);
+      $customer = $this->payUCustomers->query($criteria);
       $response = [
-        'data' => $data
+        'data' => $customer
       ];
       $status = 200;
     }catch (PayUException $e){
@@ -63,8 +63,8 @@ class CustomersApiController extends BaseApiController
   public function delete ($criteria)
   {
     try {
-      $plan = $this->payUCustomers->delete($criteria);
-      $response = ["data" => $plan];
+      $customer = $this->payUCustomers->delete($criteria);
+      $response = ["data" => $customer];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
