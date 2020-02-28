@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 use Modules\Ipayu\Support\RecurringPayments\SupportPayUSubscription;
 
-class SubscriptionsApiController
+class SubscriptionsApiController extends BaseApiController
 {
 
   private $payUSubscription;

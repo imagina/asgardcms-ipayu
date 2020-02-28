@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 use Modules\Ipayu\Support\RecurringPayments\SupportPayUAdditionalCharges;
 
-class AdditionalChargesApiController
+class AdditionalChargesApiController extends BaseApiController
 {
 
   private $payUAdditionalCharges;

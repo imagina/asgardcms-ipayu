@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 use Modules\Ipayu\Support\RecurringPayments\SupportPayUCreditCards;
 
-class CreditCardsApiController
+class CreditCardsApiController extends BaseApiController
 {
 
   private $payUCreditCards;
