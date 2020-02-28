@@ -36,7 +36,7 @@ class IpayuServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishConfig('ipayu', 'permissions');
-
+        $this->publishConfig('ipayu', 'settings');
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
     }
 
