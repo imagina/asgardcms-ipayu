@@ -23,8 +23,8 @@ class SubscriptionsApiController extends BaseApiController
   {
     try {
       $data = $request->input('attributes');
-      $plan = $this->payUSubscription->creation($data);
-      $response = ["data" => $plan];
+      $subscription = $this->payUSubscription->creation($data);
+      $response = ["data" => $subscription];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
@@ -36,8 +36,8 @@ class SubscriptionsApiController extends BaseApiController
   public function delete ($criteria)
   {
     try {
-      $plan = $this->payUSubscription->delete($criteria);
-      $response = ["data" => $plan];
+      $subscription = $this->payUSubscription->delete($criteria);
+      $response = ["data" => $subscription];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
