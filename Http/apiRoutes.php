@@ -10,4 +10,10 @@ $router->group(['prefix' => '/ipayu/v1'], function (Router $router) {
 
   require ('ApiRoutes/customerRoutes.php');
 
+  require ('ApiRoutes/creditCardRoutes.php');
+
+  require ('ApiRoutes/additionalChargesRoutes.php');
+
+  require ('ApiRoutes/subscriptionRoutes.php');
+
 });
