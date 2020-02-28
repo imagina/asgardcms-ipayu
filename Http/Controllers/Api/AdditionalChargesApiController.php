@@ -23,8 +23,8 @@ class AdditionalChargesApiController extends BaseApiController
   {
     try {
       $data = $request->input('attributes');
-      $plan = $this->payUAdditionalCharges->creation($data);
-      $response = ["data" => $plan];
+      $additionalCharge = $this->payUAdditionalCharges->creation($data);
+      $response = ["data" => $additionalCharge];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
@@ -37,8 +37,8 @@ class AdditionalChargesApiController extends BaseApiController
   {
     try {
       $data = $request->input('attributes');
-      $plan = $this->payUAdditionalCharges->update($criteria, $data);
-      $response = ["data" => $plan];
+      $additionalCharge = $this->payUAdditionalCharges->update($criteria, $data);
+      $response = ["data" => $additionalCharge];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
@@ -50,9 +50,9 @@ class AdditionalChargesApiController extends BaseApiController
   public function show ($criteria)
   {
     try{
-      $data = $this->payUAdditionalCharges->query($criteria);
+      $additionalCharge = $this->payUAdditionalCharges->query($criteria);
       $response = [
-        'data' => $data
+        'data' => $additionalCharge
       ];
       $status = 200;
     }catch (PayUException $e){
@@ -65,8 +65,8 @@ class AdditionalChargesApiController extends BaseApiController
   public function delete ($criteria)
   {
     try {
-      $plan = $this->payUAdditionalCharges->delete($criteria);
-      $response = ["data" => $plan];
+      $additionalCharge = $this->payUAdditionalCharges->delete($criteria);
+      $response = ["data" => $additionalCharge];
     } catch (\Exception $e) {
 
       $status = $this->getStatusError($e->getCode());
