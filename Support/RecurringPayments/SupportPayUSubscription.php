@@ -161,11 +161,11 @@ class SupportPayUSubscription extends SupportPayU
 
         // -- Plan parameters --
         // Enter the plan code to subscribe
-        PayUParameters::PLAN_CODE => "sample-plan-code-001",
+        PayUParameters::PLAN_CODE => $data['plan_code'],
       );
     }
 
-    if ($data['customer_and_card_createdand_with_new plan']){
+    if ($data['customer_and_card_createdand_with_new_plan']){
       return array(
         //Enter the number of installments here.
         PayUParameters::INSTALLMENTS_NUMBER => $data['installments_number'],
