@@ -22,8 +22,19 @@ class SupportPayU
     PayU::$merchantId = $this->setting->get('ipayu::payUmerchantId');
     PayU::$language = $this->setting->get('ipayu::payUlanguage');
     PayU::$isTest = $this->setting->get('ipayu::payUisTest') == "1" ? true : false;
-    Environment::setPaymentsCustomUrl($this->setting->get('ipayu::setPaymentsCustomUrl'));
-    Environment::setReportsCustomUrl($this->setting->get('ipayu::setReportsCustomUrl'));
-    Environment::setSubscriptionsCustomUrl($this->setting->get('ipayu::setSubscriptionsCustomUrl'));
+    $this->setUrlPayUEnvironment();
   }
+
+  private function setUrlPayUEnvironment () {
+    if ($this->setting->get('ipayu::payUisTest') == "1"){
+      Environment::setPaymentsCustomUrl($this->setting->get('ipayu::setPaymentsCustomUrl'));
+      Environment::setReportsCustomUrl($this->setting->get('ipayu::setReportsCustomUrl'));
+      Environment::setSubscriptionsCustomUrl($this->setting->get('ipayu::setSubscriptionsCustomUrl'));
+    } else {
+      Environment::setPaymentsCustomUrl($this->setting->get('ipayu::setPaymentsCustomUrl'));
+      Environment::setReportsCustomUrl($this->setting->get('ipayu::setReportsCustomUrl'));
+      Environment::setSubscriptionsCustomUrl($this->setting->get('ipayu::setSubscriptionsCustomUrl'));
+    }
+  }
+
 }
