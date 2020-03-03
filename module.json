@@ -8,7 +8,8 @@
     "order": 1,
     "providers": [
         "Modules\\Ipayu\\Providers\\IpayuServiceProvider",
-        "Modules\\Ipayu\\Providers\\RouteServiceProvider"
+        "Modules\\Ipayu\\Providers\\RouteServiceProvider",
+        "Modules\\Ipayu\\Providers\\PlanServiceProvider"
     ],
     "aliases": {},
     "files": [
