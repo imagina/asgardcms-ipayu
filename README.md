@@ -657,3 +657,24 @@ Automated recurring payments are payments that are performed periodically (daily
         }
       }
       ```
+      
+### Facades
+
+#### Plan
+
+Example use
+```php
+namespace ...
+
+use Modules\Ipayu\Facades\Plan;
+
+class myClass {
+  public function myFunction (){
+    $data = [...];
+    Plan::creation($data);
+  }
+}
+```
+now, you have access to all method of the class `SupportPayUPlans`
+
+
