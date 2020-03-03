@@ -77,7 +77,7 @@ class SupportPayUCreditCards extends SupportPayU
       // (OPTIONAL) Enter the postal code of the payer here.
       PayUParameters::PAYER_POSTAL_CODE => $data['payer_postal_code'],
       // (OPTIONAL) Enter the contact phone here.
-      PayUParameters::PAYER_PHONE => $data['payer_phonee']
+      PayUParameters::PAYER_PHONE => $data['payer_phone']
     );
     $response= PayUCreditCards::update($parameters);
     return $response;
