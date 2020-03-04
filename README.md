@@ -49,7 +49,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **POST** ``/api/ipayu/v1/plans``
       
       **Attributes**
-      ```
+      ```vim
       {
         "attributes": {
           "plan_description": "imagina test", // Ingresa aquí la descripción del plan
@@ -71,7 +71,7 @@ Automated recurring payments are payments that are performed periodically (daily
       ```
       
       **Response** 
-      ```
+      ```vim
       {
         "data": {
           "id": "692765fc-5f0b-4829-9da9-2ec5f8ca2c46",
@@ -111,7 +111,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **PUT:** ``/api/ipayu/v1/plans/{PLAN-CODE}``
       
       **Attributes**
-      ```
+      ```vim
       {
         "attributes": {
           "plan_description": "imagina test Updated",
@@ -132,7 +132,7 @@ Automated recurring payments are payments that are performed periodically (daily
       }
       ```
       **Response**
-      ```
+      ```vim
       {
         "data": {
           "id": "692765fc-5f0b-4829-9da9-2ec5f8ca2c46",
@@ -172,7 +172,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **GET:** ``/api/ipayu/v1/plans/imagina-test``
       
       **Response**
-      ```
+      ```vim
       {
         "data": {
           "id": "692765fc-5f0b-4829-9da9-2ec5f8ca2c46",
@@ -211,7 +211,7 @@ Automated recurring payments are payments that are performed periodically (daily
     **DELETE:** ``/api/ipayu/v1/plans/{PLAN-CODE}``
     
     **Response**
-    ```
+    ```vim
     {
       "data": true
     }
@@ -223,7 +223,7 @@ Automated recurring payments are payments that are performed periodically (daily
     **POST:** ``/api/ipayu/v1/customers``
     
       **Attributes**
-      ```
+      ```vim
       {
         "attributes": {
           "customer_name": "Imagina Colombia",
@@ -233,7 +233,7 @@ Automated recurring payments are payments that are performed periodically (daily
       ```
       
       **Response**
-      ```
+      ```vim
       {
         "data": {
           "id": "b15510e2hog7",
@@ -248,7 +248,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **PUT:** ``/api/ipayu/v1/customers/{ID-CUSTOMER}``
       
       **Attributes**
-      ```
+      ```vim
       {
         "attributes": {
           "customer_name": "Imagina Colombia update",
@@ -258,7 +258,7 @@ Automated recurring payments are payments that are performed periodically (daily
       ```
       
       **Response**
-      ```
+      ```vim
       {
         "data": {
           "id": "b15510e2hog7",
@@ -274,7 +274,7 @@ Automated recurring payments are payments that are performed periodically (daily
       
       **Response:**
       
-      ```
+      ```vim
       {
         "data": {
           "id": "b15510e2hog7",
@@ -288,7 +288,7 @@ Automated recurring payments are payments that are performed periodically (daily
     
       **DELETE:** ``/api/ipayu/v1/customers/ID-CUSTOMER``
       
-      ```
+      ```vim
       {
         "data": {
           "description": "The customer [b15510e2hog7] has been deleted"
@@ -302,7 +302,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **POST:** ``/api/ipayu/v1/credit-cards``
       
       **Attributes**
-      ```
+      ```vim
       {
         "attributes": {
           "customer_id": "4d341cr3b3xb",
@@ -325,7 +325,7 @@ Automated recurring payments are payments that are performed periodically (daily
       ```
       
       **Response**
-      ```
+      ```vim
       {
         "data": {
           "token": "d7387e50-9d23-4bbb-8f32-bcd6d79874cf"
@@ -338,7 +338,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **PUT:** ``/api/ipayu/v1/credit-cards/{TOKEN-ID}``
       
       **Attributes**
-      ```
+      ```vim
       {
         "attributes": {
           "customer_id": "4d341cr3b3xb",
@@ -361,7 +361,7 @@ Automated recurring payments are payments that are performed periodically (daily
       ```
           
       **Response**
-      ```
+      ```vim
       {
         "data": {
           "token": "d7387e50-9d23-4bbb-8f32-bcd6d79874cf"
@@ -403,7 +403,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **DELETE:** ``/api/ipayu/v1/credit-cards/{TOKEN-ID}``
     
       **Response**
-      ```
+      ```vim
       {
         "data": true
       }
@@ -458,7 +458,7 @@ Automated recurring payments are payments that are performed periodically (daily
         ```
         
         **Response**
-        ```
+        ```vim
         {
           "data": {
             
@@ -469,7 +469,7 @@ Automated recurring payments are payments that are performed periodically (daily
       * **With all existing items**
 
         **Attributes**
-        ```
+        ```vim
         {
           "attributes": {
             "all_existing": true,
@@ -494,7 +494,7 @@ Automated recurring payments are payments that are performed periodically (daily
       * **Already created plan and customer, and a new card**
 
         **Attributes**
-        ```
+        ```vim
         {
           "attributes": {
             "plan_and_customer_created_and_new_card": true,
@@ -521,7 +521,7 @@ Automated recurring payments are payments that are performed periodically (daily
           ```
         
         **Response**
-        ```
+        ```vim
         {
           "data": {
             
@@ -532,7 +532,7 @@ Automated recurring payments are payments that are performed periodically (daily
       * **Already created customer and card, and with new plan**
 
         **Attributes**
-        ```
+        ```vim
         {
           "attributes": {
             "customer_and_card_createdand_with_new_plan": true,
@@ -559,7 +559,7 @@ Automated recurring payments are payments that are performed periodically (daily
         ```
         
         **Response**
-        ```
+        ```vim
         {
           "data": {
             
@@ -572,7 +572,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **DELETE:** ``/api/ipayu/v1/subscriptions/{SUBSCRIPTION-ID}``
       
       **Response**
-      ```
+      ```vim
       {
         "data": true
       }
@@ -585,7 +585,7 @@ Automated recurring payments are payments that are performed periodically (daily
     **POST** ``/api/ipayu/v1/additional-charges``
     
       **Attributes**
-      ```
+      ```vim
         {
           "attributes": {
             "description": "",
@@ -598,7 +598,7 @@ Automated recurring payments are payments that are performed periodically (daily
       ```
       
       **Response**
-      ```
+      ```vim
       {
         "data": {
       
@@ -611,7 +611,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **POST** ``/api/ipayu/v1/additional-charges/{RECURRING-BILL-ITEM-ID}``
       
       **Attributes**
-      ```
+      ```vim
       {
         "attributes": {
           "description": "",
@@ -624,7 +624,7 @@ Automated recurring payments are payments that are performed periodically (daily
       ```
       
       **Response**
-      ```
+      ```vim
       {
         "data": {
         
@@ -637,7 +637,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **POST** ``/api/ipayu/v1/'additional-charges/{RECURRING-BILL-ITEM-ID}``
       
       **Response**
-      ```
+      ```vim
       {
         "data": {
         
@@ -650,7 +650,7 @@ Automated recurring payments are payments that are performed periodically (daily
       **POST** ``/api/ipayu/v1/additional-charges/{RECURRING-BILL-ITEM-ID}``
             
       **Response**
-      ```
+      ```vim
       {
         "data": {
         
