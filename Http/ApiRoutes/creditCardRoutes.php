@@ -4,6 +4,12 @@ use Illuminate\Routing\Router;
 
 $router->group(['prefix' => 'credit-cards'], function (Router $router) {
 
+  $router->get('/', [
+    'as' => 'api.ipayu.credit-cards.index',
+    'uses' => 'CreditCardsApiController@index',
+    'middleware' => ['auth:api']
+  ]);
+
   $router->post('/', [
     'as' => 'api.ipayu.credit-cards.create',
     'uses' => 'CreditCardsApiController@create',
