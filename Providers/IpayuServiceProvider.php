@@ -29,7 +29,11 @@ class IpayuServiceProvider extends ServiceProvider
         $this->app['events']->listen(BuildingSidebar::class, RegisterIpayuSidebar::class);
 
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
+            $event->load('creditcards', array_dot(trans('ipayu::creditcards')));
+            $event->load('orders', array_dot(trans('ipayu::orders')));
             // append translations
+
+
         });
     }
 
@@ -52,6 +56,32 @@ class IpayuServiceProvider extends ServiceProvider
 
     private function registerBindings()
     {
+        $this->app->bind(
+            'Modules\Ipayu\Repositories\CreditCardRepository',
+            function () {
+                $repository = new \Modules\Ipayu\Repositories\Eloquent\EloquentCreditCardRepository(new \Modules\Ipayu\Entities\CreditCard());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Ipayu\Repositories\Cache\CacheCreditCardDecorator($repository);
+            }
+        );
+        $this->app->bind(
+            'Modules\Ipayu\Repositories\OrderRepository',
+            function () {
+                $repository = new \Modules\Ipayu\Repositories\Eloquent\EloquentOrderRepository(new \Modules\Ipayu\Entities\Order());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Ipayu\Repositories\Cache\CacheOrderDecorator($repository);
+            }
+        );
 // add bindings
+
+
     }
 }
