@@ -677,4 +677,8 @@ class myClass {
 ```
 now, you have access to all method of the class `SupportPayUPlans`
 
+### Confirmation page
+
+**POST** ``/api/ipayu/v1/orders``
+
 
