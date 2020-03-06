@@ -7,6 +7,10 @@
 composer require imagina/ipayu-module
 ```
 
+```vim
+php artisan module:migrate Ipayu
+```
+
 ### Configuration
 
 Access your asgard administrator, go to the ipayu settings and enter the requested data
