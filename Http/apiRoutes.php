@@ -16,4 +16,6 @@ $router->group(['prefix' => '/ipayu/v1'], function (Router $router) {
 
   require ('ApiRoutes/subscriptionRoutes.php');
 
+  require ('ApiRoutes/OrderRoutes.php');
+
 });
